@@ -16,3 +16,21 @@ resource "azurerm_subnet" "landing_subnet" {
   virtual_network_name = azurerm_virtual_network.landing_vnet.name
   address_prefixes     = var.subnet_prefix
 }
+
+resource "azurerm_network_security_group" "landing_nsg" {
+  name                = "nsg-landing-zone"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.landing_zone.name
+
+  security_rule {
+    name                       = "Allow-SSH"
+    priority                   = 1000
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}
