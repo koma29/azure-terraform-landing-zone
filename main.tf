@@ -39,3 +39,11 @@ resource "azurerm_subnet_network_security_group_association" "landing_assoc" {
   subnet_id                 = azurerm_subnet.landing_subnet.id
   network_security_group_id = azurerm_network_security_group.landing_nsg.id
 }
+
+resource "azurerm_log_analytics_workspace" "landing_logs" {
+  name                = "log-landing-zone"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.landing_zone.name
+  sku                 = "PerGB2018"
+  retention_in_days   = 30
+}
