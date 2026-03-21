@@ -34,3 +34,8 @@ resource "azurerm_network_security_group" "landing_nsg" {
     destination_address_prefix = "*"
   }
 }
+
+resource "azurerm_subnet_network_security_group_association" "landing_assoc" {
+  subnet_id                 = azurerm_subnet.landing_subnet.id
+  network_security_group_id = azurerm_network_security_group.landing_nsg.id
+}
