@@ -30,6 +30,11 @@ This project demonstrates:
 - Security configuration
 - Monitoring setup
 
+## Cost
+See [COST_NOTES.md](COST_NOTES.md) for monthly cost breakdown, what actually bills in
+an Azure network, and the cost governance approach (tagging policy, budgets, Cost
+Management exports, meter-level analysis).
+
 ## Future Improvements
 - Add Azure Bastion
 - Deploy Virtual Machines
