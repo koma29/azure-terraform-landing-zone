@@ -1,4 +1,5 @@
 # Azure Terraform Landing Zone
+![Terraform CI](https://github.com/koma29/azure-terraform-landing-zone/actions/workflows/terraform-ci.yml/badge.svg)
 
 ## Overview
 This project deploys a foundational Azure environment using Terraform, following infrastructure-as-code best practices.
